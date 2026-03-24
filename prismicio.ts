@@ -12,6 +12,8 @@ import sm from "./slicemachine.config.json";
 export const repositoryName =
   process.env.NEXT_PUBLIC_PRISMIC_ENVIRONMENT || sm.repositoryName;
 
+console.log("=== PRISMIC REPOSITORY NAME ===", repositoryName);
+
 /**
  * A list of Route Resolver objects that define how a document's `url` field is resolved.
  *
@@ -23,7 +25,7 @@ const routes: Route[] = [
     path: "/",
   },
   {
-    type: "job",
+    type: "jobs",
     path: "/offre/:uid",
   },
 ];
@@ -35,12 +37,14 @@ const routes: Route[] = [
  * @param config - Configuration for the Prismic client.
  */
 export const createClient = (config: ClientConfig = {}) => {
+  console.log("=== CREATING PRISMIC CLIENT ===", repositoryName);
+  
   const client = baseCreateClient(repositoryName, {
     routes,
     fetchOptions:
       process.env.NODE_ENV === "production"
         ? { next: { tags: ["prismic"] }, cache: "force-cache" }
-        : { next: { revalidate: 5 } },
+        : { next: { revalidate: 0 } },
     ...config,
   });
 

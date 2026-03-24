@@ -1,14 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { JobDocument } from "@/prismicio-types";
+import { JobsDocument } from "@/prismicio-types";
 import JobCard from "./JobCard";
 import { Button } from "@/components/ui/button";
 
 const PAGE_SIZE = 9;
 
 interface JobsListProps {
-  jobs: JobDocument[];
+  jobs: JobsDocument[];
 }
 
 export default function JobsList({ jobs }: JobsListProps) {

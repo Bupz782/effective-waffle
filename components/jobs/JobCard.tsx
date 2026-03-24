@@ -1,12 +1,12 @@
 "use client";
 
-import { JobDocument } from "@/prismicio-types";
+import { JobsDocument } from "@/prismicio-types";
 import { isFilled } from "@prismicio/client";
 import Link from "next/link";
 import { Tag } from "@/components/ui/tag";
 
 interface JobCardProps {
-  job: JobDocument;
+  job: JobsDocument;
 }
 
 export default function JobCard({ job }: JobCardProps) {

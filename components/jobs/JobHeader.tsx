@@ -1,24 +1,24 @@
 "use client";
 
-import { JobDocument } from "@/prismicio-types";
+import { JobsDocument } from "@/prismicio-types";
 import { isFilled } from "@prismicio/client";
 import { useJobsStore } from "@/store/jobs.store";
 import { Tag } from "@/components/ui/tag";
 
 interface JobHeaderProps {
-  job: JobDocument;
+  job: JobsDocument;
 }
 
 export default function JobHeader({ job }: JobHeaderProps) {
   const { isSaved, addJob, removeJob } = useJobsStore();
-  const saved = isSaved(job);
+  const saved = isSaved(job as any);
 
   return (
     <div className="bg-white rounded-xl shadow-sm p-8 mb-8">
       {/* Actions */}
       <div className="flex justify-end mb-4">
         <button
-          onClick={() => saved ? removeJob(job) : addJob(job)}
+          onClick={() => saved ? removeJob(job as any) : addJob(job as any)}
           className="flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors"
           style={{
             backgroundColor: saved ? "#dbeafe" : "white",

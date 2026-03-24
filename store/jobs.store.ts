@@ -1,14 +1,14 @@
 "use client";
 
-import { JobDocument } from "@/prismicio-types";
+import { JobsDocument } from "@/prismicio-types";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 type JobState = {
-  jobs: JobDocument[];
-  addJob: (job: JobDocument) => void;
-  removeJob: (job: JobDocument) => void;
-  isSaved: (job: JobDocument) => boolean;
+  jobs: JobsDocument[];
+  addJob: (job: JobsDocument) => void;
+  removeJob: (job: JobsDocument) => void;
+  isSaved: (job: JobsDocument) => boolean;
 };
 
 export const useJobsStore = create<JobState>()(
