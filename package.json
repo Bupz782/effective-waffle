@@ -22,9 +22,11 @@
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "tailwind-merge": "^3.5.0",
-    "zod": "^4.3.6"
+    "zod": "^4.3.6",
+    "zustand": "^5.0.12"
   },
   "devDependencies": {
+    "@prismicio/types": "^0.2.9",
     "@slicemachine/adapter-next": "^0.3.95",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
@@ -32,6 +34,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.1",
+    "prismic-ts-codegen": "^0.1.28",
     "slice-machine-ui": "^2.21.1",
     "tailwindcss": "^4",
     "typescript": "^5"

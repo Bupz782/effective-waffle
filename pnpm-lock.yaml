@@ -47,10 +47,16 @@ importers:
       zod:
         specifier: ^4.3.6
         version: 4.3.6
+      zustand:
+        specifier: ^5.0.12
+        version: 5.0.12(@types/react@19.2.14)(react@19.2.4)
     devDependencies:
+      '@prismicio/types':
+        specifier: ^0.2.9
+        version: 0.2.9
       '@slicemachine/adapter-next':
         specifier: ^0.3.95
-        version: 0.3.95(next@16.2.1(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.3.95(@prismicio/types@0.2.9)(next@16.2.1(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@tailwindcss/postcss':
         specifier: ^4
         version: 4.2.2
@@ -69,9 +75,12 @@ importers:
       eslint-config-next:
         specifier: 16.2.1
         version: 16.2.1(@typescript-eslint/parser@8.57.2(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3)
+      prismic-ts-codegen:
+        specifier: ^0.1.28
+        version: 0.1.28(@prismicio/client@7.21.6)(@prismicio/types@0.2.9)
       slice-machine-ui:
         specifier: ^2.21.1
-        version: 2.21.1(zod@4.3.6)
+        version: 2.21.1(@prismicio/types@0.2.9)(zod@4.3.6)
       tailwindcss:
         specifier: ^4
         version: 4.2.2
@@ -746,6 +755,11 @@ packages:
       fp-ts: ^2.11.8
       io-ts: ^2.2.16
       io-ts-types: ^0.5.16
+
+  '@prismicio/types@0.2.9':
+    resolution: {integrity: sha512-1uhHnZTiGeCi+rmO507B8jtnUTCNetdgrC5sfZEw9zsCplfgBELt0+BN1RFsXWLbZbyvR9xzHcrJ87Ykqa8JZA==}
+    engines: {node: '>=12.7.0'}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
@@ -2595,6 +2609,19 @@ packages:
       '@prismicio/types':
         optional: true
 
+  prismic-ts-codegen@0.1.28:
+    resolution: {integrity: sha512-jif26wL/47L+W8eLidtq2ejI/Owu3PwxON2DJsNHsHS8ST66mVyfuD2212tJqaNoYkYgVBStNJYJQ17PRnJKDw==}
+    engines: {node: '>=12.7.0'}
+    hasBin: true
+    peerDependencies:
+      '@prismicio/client': ^6.6 || ^7
+      '@prismicio/types': ^0.2.8
+    peerDependenciesMeta:
+      '@prismicio/client':
+        optional: true
+      '@prismicio/types':
+        optional: true
+
   process@0.11.10:
     resolution: {integrity: sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==}
     engines: {node: '>= 0.6.0'}
@@ -3112,6 +3139,24 @@ packages:
 
   zod@4.3.6:
     resolution: {integrity: sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg==}
+
+  zustand@5.0.12:
+    resolution: {integrity: sha512-i77ae3aZq4dhMlRhJVCYgMLKuSiZAaUPAct2AksxQ+gOtimhGMdXljRT21P5BNpeT4kXlLIckvkPM029OljD7g==}
+    engines: {node: '>=12.20.0'}
+    peerDependencies:
+      '@types/react': '>=18.0.0'
+      immer: '>=9.0.6'
+      react: '>=18.0.0'
+      use-sync-external-store: '>=1.2.0'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      immer:
+        optional: true
+      react:
+        optional: true
+      use-sync-external-store:
+        optional: true
 
 snapshots:
 
@@ -3722,6 +3767,10 @@ snapshots:
     dependencies:
       '@prismicio/client': 7.17.0
 
+  '@prismicio/custom-types-client@1.3.1(@prismicio/client@7.21.6)':
+    dependencies:
+      '@prismicio/client': 7.21.6
+
   '@prismicio/custom-types-client@2.1.0(@prismicio/client@7.17.0)':
     dependencies:
       '@prismicio/client': 7.17.0
@@ -3774,6 +3823,8 @@ snapshots:
       tslib: 2.8.1
       uuid: 9.0.1
 
+  '@prismicio/types@0.2.9': {}
+
   '@rtsao/scc@1.1.0': {}
 
   '@scarf/scarf@1.4.0': {}
@@ -3809,11 +3860,11 @@ snapshots:
 
   '@sideway/pinpoint@2.0.0': {}
 
-  '@slicemachine/adapter-next@0.3.95(next@16.2.1(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)':
+  '@slicemachine/adapter-next@0.3.95(@prismicio/types@0.2.9)(next@16.2.1(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@prismicio/simulator': 0.1.4
       '@prismicio/types-internal': 3.11.2(fp-ts@2.16.11)(io-ts-types@0.5.19(fp-ts@2.16.11)(io-ts@2.2.22(fp-ts@2.16.11))(monocle-ts@2.3.13(fp-ts@2.16.11))(newtype-ts@0.3.5(fp-ts@2.16.11)(monocle-ts@2.3.13(fp-ts@2.16.11))))(io-ts@2.2.22(fp-ts@2.16.11))
-      '@slicemachine/plugin-kit': 0.4.93
+      '@slicemachine/plugin-kit': 0.4.93(@prismicio/types@0.2.9)
       common-tags: 1.8.2
       fp-ts: 2.16.11
       io-ts: 2.2.22(fp-ts@2.16.11)
@@ -3827,7 +3878,7 @@ snapshots:
     transitivePeerDependencies:
       - '@prismicio/types'
 
-  '@slicemachine/manager@0.27.1(zod@4.3.6)':
+  '@slicemachine/manager@0.27.1(@prismicio/types@0.2.9)(zod@4.3.6)':
     dependencies:
       '@antfu/ni': 0.20.0
       '@anthropic-ai/claude-agent-sdk': 0.1.37(zod@4.3.6)
@@ -3836,7 +3887,7 @@ snapshots:
       '@prismicio/mocks': 2.14.0
       '@prismicio/types-internal': 3.11.2(fp-ts@2.16.11)(io-ts-types@0.5.19(fp-ts@2.16.11)(io-ts@2.2.22(fp-ts@2.16.11))(monocle-ts@2.3.13(fp-ts@2.16.11))(newtype-ts@0.3.5(fp-ts@2.16.11)(monocle-ts@2.3.13(fp-ts@2.16.11))))(io-ts@2.2.22(fp-ts@2.16.11))
       '@segment/analytics-node': 2.3.0
-      '@slicemachine/plugin-kit': 0.4.93
+      '@slicemachine/plugin-kit': 0.4.93(@prismicio/types@0.2.9)
       cookie: 1.1.1
       cors: 2.8.6
       execa: 7.2.0
@@ -3861,7 +3912,7 @@ snapshots:
       - encoding
       - zod
 
-  '@slicemachine/plugin-kit@0.4.93':
+  '@slicemachine/plugin-kit@0.4.93(@prismicio/types@0.2.9)':
     dependencies:
       '@prismicio/client': 7.17.0
       common-tags: 1.8.2
@@ -3873,7 +3924,7 @@ snapshots:
       io-ts-reporters: 2.0.1(fp-ts@2.16.11)(io-ts@2.2.22(fp-ts@2.16.11))
       p-limit: 4.0.0
       prettier: 3.8.1
-      prismic-ts-codegen: 0.1.27(@prismicio/client@7.17.0)
+      prismic-ts-codegen: 0.1.27(@prismicio/client@7.17.0)(@prismicio/types@0.2.9)
     transitivePeerDependencies:
       - '@prismicio/types'
 
@@ -5785,7 +5836,7 @@ snapshots:
 
   prettier@3.8.1: {}
 
-  prismic-ts-codegen@0.1.27(@prismicio/client@7.17.0):
+  prismic-ts-codegen@0.1.27(@prismicio/client@7.17.0)(@prismicio/types@0.2.9):
     dependencies:
       '@prismicio/custom-types-client': 1.3.1(@prismicio/client@7.17.0)
       common-tags: 1.8.2
@@ -5798,6 +5849,22 @@ snapshots:
       quick-lru: 6.1.2
     optionalDependencies:
       '@prismicio/client': 7.17.0
+      '@prismicio/types': 0.2.9
+
+  prismic-ts-codegen@0.1.28(@prismicio/client@7.21.6)(@prismicio/types@0.2.9):
+    dependencies:
+      '@prismicio/custom-types-client': 1.3.1(@prismicio/client@7.21.6)
+      common-tags: 1.8.2
+      fast-glob: 3.3.3
+      jiti: 1.21.7
+      joi: 17.13.3
+      meow: 12.0.1
+      node-fetch: 3.3.2
+      pascal-case: 3.1.2
+      quick-lru: 6.1.2
+    optionalDependencies:
+      '@prismicio/client': 7.21.6
+      '@prismicio/types': 0.2.9
 
   process@0.11.10: {}
 
@@ -6087,10 +6154,10 @@ snapshots:
 
   signal-exit@3.0.7: {}
 
-  slice-machine-ui@2.21.1(zod@4.3.6):
+  slice-machine-ui@2.21.1(@prismicio/types@0.2.9)(zod@4.3.6):
     dependencies:
-      '@slicemachine/manager': 0.27.1(zod@4.3.6)
-      start-slicemachine: 0.12.73(zod@4.3.6)
+      '@slicemachine/manager': 0.27.1(@prismicio/types@0.2.9)(zod@4.3.6)
+      start-slicemachine: 0.12.73(@prismicio/types@0.2.9)(zod@4.3.6)
     transitivePeerDependencies:
       - '@prismicio/types'
       - '@types/express'
@@ -6120,11 +6187,11 @@ snapshots:
 
   stable-hash@0.0.5: {}
 
-  start-slicemachine@0.12.73(zod@4.3.6):
+  start-slicemachine@0.12.73(@prismicio/types@0.2.9)(zod@4.3.6):
     dependencies:
       '@prismicio/mocks': 2.14.0
       '@prismicio/types-internal': 3.11.2(fp-ts@2.16.11)(io-ts-types@0.5.19(fp-ts@2.16.11)(io-ts@2.2.22(fp-ts@2.16.11))(monocle-ts@2.3.13(fp-ts@2.16.11))(newtype-ts@0.3.5(fp-ts@2.16.11)(monocle-ts@2.3.13(fp-ts@2.16.11))))(io-ts@2.2.22(fp-ts@2.16.11))
-      '@slicemachine/manager': 0.27.1(zod@4.3.6)
+      '@slicemachine/manager': 0.27.1(@prismicio/types@0.2.9)(zod@4.3.6)
       body-parser: 1.20.4
       chalk: 4.1.2
       cors: 2.8.6
@@ -6470,3 +6537,8 @@ snapshots:
       zod: 4.3.6
 
   zod@4.3.6: {}
+
+  zustand@5.0.12(@types/react@19.2.14)(react@19.2.4):
+    optionalDependencies:
+      '@types/react': 19.2.14
+      react: 19.2.4
