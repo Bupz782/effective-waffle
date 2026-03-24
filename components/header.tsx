@@ -14,6 +14,7 @@ interface HeaderProps {
 export function Header({ isLoggedIn = false }: HeaderProps) {
   const [mounted, setMounted] = useState(false);
   const savedJobsCount = useJobsStore((state) => state.jobs.length);
+  const appliedJobsCount = useJobsStore((state) => state.appliedJobs.length);
 
   useEffect(() => {
     setMounted(true);
@@ -34,6 +35,17 @@ export function Header({ isLoggedIn = false }: HeaderProps) {
             className="text-white text-base font-medium transition-colors hover:text-[#2175d9]"
           >
             Offres
+          </Link>
+          <Link
+            href="/historique"
+            className="flex items-center gap-1.5 text-white text-base font-medium transition-colors hover:text-[#2175d9]"
+          >
+            {mounted && appliedJobsCount > 0 && (
+              <span className="bg-blue-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                {appliedJobsCount}
+              </span>
+            )}
+            Candidatures
           </Link>
           <Link
             href="/pins"
