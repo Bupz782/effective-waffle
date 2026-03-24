@@ -1,0 +1,46 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "Nos dernières opportunités",
+				"type": "Text"
+			},
+			"description": {
+				"__TYPE__": "FieldContent",
+				"value": "Découvre les offres qui matchent ton profil",
+				"type": "Text"
+			},
+			"jobs": {
+				"__TYPE__": "RepeatableContent",
+				"type": "Link",
+				"value": [
+					{
+						"key": "6d14e504-89ad-4a3f-8d6c-5d926e2f9d22",
+						"__TYPE__": "LinkContent",
+						"value": {
+							"__TYPE__": "DocumentLink",
+							"id": "mock_job_1"
+						}
+					},
+					{
+						"key": "416f3ca5-ccc5-47c1-b108-6cffa3e56e13",
+						"__TYPE__": "LinkContent",
+						"value": {
+							"__TYPE__": "DocumentLink",
+							"id": "mock_job_2"
+						}
+					}
+				]
+			},
+			"postdate": {
+				"__TYPE__": "FieldContent",
+				"type": "Date",
+				"value": "2020-12-10"
+			}
+		},
+		"items": []
+	}
+]

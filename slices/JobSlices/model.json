@@ -1,0 +1,56 @@
+{
+  "id": "job_slices",
+  "type": "SharedSlice",
+  "name": "JobSlices",
+  "description": "JobSlices",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": "Job Title"
+          }
+        },
+        "desc": {
+          "type": "Text",
+          "config": {
+            "label": "Desc",
+            "placeholder": "Description Jobs"
+          }
+        },
+        "postdate": {
+          "type": "Date",
+          "config": {
+            "label": "PostDate",
+            "placeholder": "01/01/2000"
+          }
+        },
+        "tech": {
+          "type": "Group",
+          "config": {
+            "label": "Tech",
+            "repeat": true,
+            "fields": {
+              "technologia": {
+                "type": "Text",
+                "config": {
+                  "label": "Technologia",
+                  "placeholder": "Pole Emplois"
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

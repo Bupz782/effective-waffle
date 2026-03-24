@@ -1,0 +1,52 @@
+{
+  "id": "job_list",
+  "type": "SharedSlice",
+  "name": "JobList",
+  "description": "Section liste des offres d'emploi",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default variation with title and job relations",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Section Title",
+            "placeholder": "Titre de la section (ex: Nos offres)"
+          }
+        },
+        "description": {
+          "type": "Text",
+          "config": {
+            "label": "Description",
+            "placeholder": "Description optionnelle"
+          }
+        },
+        "jobs": {
+          "type": "Link",
+          "config": {
+            "label": "Jobs",
+            "select": "document",
+            "customtypes": [
+              "job"
+            ],
+            "repeat": true,
+            "allowText": false
+          }
+        },
+        "postdate": {
+          "type": "Date",
+          "config": {
+            "label": "PostDate",
+            "placeholder": "01/01/2002"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

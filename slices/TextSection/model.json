@@ -1,0 +1,27 @@
+{
+  "id": "text_section",
+  "type": "SharedSlice",
+  "name": "TextSection",
+  "description": "Section de contenu texte riche",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default variation with rich text content",
+      "imageUrl": "",
+      "primary": {
+        "content": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Content",
+            "multi": "paragraph,preformatted,heading2,heading3,strong,em,hyperlink,list-item,o-list-item",
+            "placeholder": "Contenu de la section"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

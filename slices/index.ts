@@ -2,4 +2,9 @@
 
 import dynamic from "next/dynamic";
 
-export const components = {};
+export const components = {
+  hero_section: dynamic(() => import("./HeroSection")),
+  job_list: dynamic(() => import("./JobList")),
+  job_slices: dynamic(() => import("./JobSlices")),
+  text_section: dynamic(() => import("./TextSection")),
+};

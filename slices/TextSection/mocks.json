@@ -1,0 +1,32 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Pourquoi nous choisir ?"
+						}
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nous sélectionnons uniquement les meilleures opportunités tech du marché. Chaque offre est vérifiée par notre équipe pour garantir des conditions de travail optimales et des projets stimulants."
+						}
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Que tu sois développeur frontend, backend, fullstack ou expert en data, tu trouveras ton bonheur parmi nos offres."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

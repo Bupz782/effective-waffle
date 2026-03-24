@@ -1,0 +1,55 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "Trouve ton job tech idéal",
+				"type": "Text"
+			},
+			"subtitle": {
+				"__TYPE__": "FieldContent",
+				"value": "Des offres d'emploi sélectionnées pour les développeurs, designers et experts tech",
+				"type": "Text"
+			},
+			"image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1497366216548-37526070297c",
+					"width": 1600,
+					"height": 900
+				},
+				"url": "https://images.unsplash.com/photo-1497366216548-37526070297c",
+				"width": 1600,
+				"height": 900,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"alt": "Bureau moderne avec équipe tech",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"cta_text": {
+				"__TYPE__": "FieldContent",
+				"value": "Voir les offres",
+				"type": "Text"
+			},
+			"cta_link": {
+				"key": "8d64a4b5-2b0c-4192-b0ce-f70b559642c6",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "DocumentLink",
+					"id": "mock_document_id"
+				}
+			}
+		},
+		"items": []
+	}
+]

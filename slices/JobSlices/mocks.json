@@ -1,0 +1,42 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "near",
+				"type": "Text"
+			},
+			"desc": {
+				"__TYPE__": "FieldContent",
+				"value": "gas",
+				"type": "Text"
+			},
+			"postdate": {
+				"__TYPE__": "FieldContent",
+				"type": "Date",
+				"value": "2014-07-21"
+			},
+			"tech": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"technologia",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "time",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
