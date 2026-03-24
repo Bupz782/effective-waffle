@@ -4,7 +4,7 @@ import { PrismicRichText } from "@prismicio/react";
 import { isFilled } from "@prismicio/client";
 import { createClient } from "@/prismicio";
 import JobHeader from "@/components/jobs/JobHeader";
-import { Button } from "@/components/ui/button";
+import { ApplyModal } from "@/components/jobs/ApplyModal";
 import Link from "next/link";
 
 export const dynamicParams = true;
@@ -109,9 +109,7 @@ export default async function JobPage({
           <p className="text-blue-100 mb-6">
             Postulez maintenant et rejoignez l&apos;aventure
           </p>
-          <Button variant="secondary" size="lg">
-            Postuler à cette offre
-          </Button>
+          <ApplyModal job={job as any} />
         </div>
       </div>
     </div>

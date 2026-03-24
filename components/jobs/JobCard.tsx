@@ -11,8 +11,9 @@ interface JobCardProps {
 }
 
 export default function JobCard({ job }: JobCardProps) {
-  const { isSaved, addJob, removeJob } = useJobsStore();
+  const { isSaved, addJob, removeJob, isApplied } = useJobsStore();
   const saved = isSaved(job);
+  const applied = isApplied(job);
 
   const handleSaveClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -25,7 +26,7 @@ export default function JobCard({ job }: JobCardProps) {
   };
 
   return (
-    <div className="group relative bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow p-6 h-full flex flex-col">
+    <div className={`group relative bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow p-6 h-full flex flex-col ${applied ? "opacity-50 grayscale" : ""}`}>
       {/* Save Button */}
       <button
         onClick={handleSaveClick}

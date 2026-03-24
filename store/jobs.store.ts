@@ -9,6 +9,10 @@ type JobState = {
   addJob: (job: JobsDocument) => void;
   removeJob: (job: JobsDocument) => void;
   isSaved: (job: JobsDocument) => boolean;
+
+  appliedJobs: JobsDocument[];
+  applyJob: (job: JobsDocument) => void;
+  isApplied: (job: JobsDocument) => boolean;
 };
 
 export const useJobsStore = create<JobState>()(
@@ -26,6 +30,15 @@ export const useJobsStore = create<JobState>()(
           jobs: state.jobs.filter((j) => j.id !== job.id),
         })),
       isSaved: (job) => get().jobs.some((j) => j.id === job.id),
+
+      appliedJobs: [],
+      applyJob: (job) =>
+        set((state) => ({
+          appliedJobs: state.appliedJobs.some((j) => j.id === job.id)
+            ? state.appliedJobs
+            : [...state.appliedJobs, job],
+        })),
+      isApplied: (job) => get().appliedJobs.some((j) => j.id === job.id),
     }),
     { name: "waffle-saved-jobs" }
   )

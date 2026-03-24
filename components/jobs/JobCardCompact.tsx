@@ -4,6 +4,7 @@ import Link from "next/link";
 import { isFilled } from "@prismicio/client";
 import { JobsDocument } from "@/types/prismic";
 import { SaveJobButton } from "@/app/_components/SaveJobButton";
+import { useJobsStore } from "@/store/jobs.store";
 
 function getCompanyColor(company: string): string {
   const colors = [
@@ -24,6 +25,8 @@ function getCompanyColor(company: string): string {
 }
 
 export function JobCardCompact({ job }: { job: JobsDocument }) {
+  const { isApplied } = useJobsStore();
+  const applied = isApplied(job);
   const companyName = isFilled.keyText(job.data.company) ? job.data.company : "?";
   const initials = companyName
     .split(" ")
@@ -34,7 +37,7 @@ export function JobCardCompact({ job }: { job: JobsDocument }) {
   const bgColor = getCompanyColor(companyName);
 
   return (
-    <div className="group relative bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+    <div className={`group relative bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden ${applied ? "opacity-50 grayscale" : ""}`}>
       <SaveJobButton job={job} />
 
       <Link href={`/offre/${job.uid}`} className="block">
