@@ -1,0 +1,55 @@
+{
+  "id": "latest_jobs",
+  "type": "SharedSlice",
+  "name": "LatestJobs",
+  "description": "Section affichant les X derniers jobs publiés",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default variation",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": "Titre de la section (ex: Nos dernières opportunités)"
+          }
+        },
+        "subtitle": {
+          "type": "Text",
+          "config": {
+            "label": "Subtitle",
+            "placeholder": "Sous-titre de la section"
+          }
+        },
+        "button_text": {
+          "type": "Text",
+          "config": {
+            "label": "Button Text",
+            "placeholder": "Texte du bouton (ex: Voir toutes les offres)"
+          }
+        },
+        "button_link": {
+          "type": "Link",
+          "config": {
+            "label": "Button Link",
+            "select": "document",
+            "allowText": false
+          }
+        },
+        "jobs_count": {
+          "type": "Number",
+          "config": {
+            "label": "Number of Jobs",
+            "placeholder": "Nombre de jobs à afficher (défaut: 6)"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

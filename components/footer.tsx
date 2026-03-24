@@ -3,13 +3,15 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="border-t-2 border-[#2175d9] bg-[#0f1941] py-8">
-      <div className="mx-auto flex max-w-432 items-center justify-between px-25">
+    <footer className="border-t-4 border-[#2175d9] bg-[#0f1941] py-6 sm:py-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
-        <span className="text-xl font-bold text-white">LOGO</span>
+        <Link href="/" className="text-lg sm:text-xl font-bold text-white">
+          WAFFLE
+        </Link>
 
         {/* Links */}
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-6">
           <Link
             href="/mentions-legales"
             className="text-sm text-white transition-colors hover:text-[#2175d9]"
@@ -22,7 +24,7 @@ export function Footer() {
             rel="noopener noreferrer"
             className="text-white transition-colors hover:text-[#2175d9]"
           >
-            <LinkedInIcon sx={{ fontSize: 20 }} />
+            <LinkedInIcon sx={{ fontSize: 24 }} />
           </a>
         </div>
       </div>

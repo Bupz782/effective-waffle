@@ -1,17 +1,12 @@
-import { FC } from "react";
-import { Content } from "@prismicio/client";
-import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
-import { isFilled } from "@prismicio/client";
+"use client";
 
-/**
- * Props for `TextSection`.
- */
-export type TextSectionProps = SliceComponentProps<Content.TextSectionSlice>;
+import { PrismicRichText } from "@prismicio/react";
+import { isFilled } from "@prismicio/client";
 
 /**
  * Component for "TextSection" Slices.
  */
-const TextSection: FC<TextSectionProps> = ({ slice }) => {
+export default function TextSection({ slice }: { slice: any }) {
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -61,6 +56,4 @@ const TextSection: FC<TextSectionProps> = ({ slice }) => {
       </div>
     </section>
   );
-};
-
-export default TextSection;
+}

@@ -5,41 +5,30 @@ import LoginIcon from "@mui/icons-material/Login";
 import LogoutIcon from "@mui/icons-material/Logout";
 import Link from "next/link";
 import { useJobsStore } from "@/store/jobs.store";
+import { useEffect, useState } from "react";
 
 interface HeaderProps {
   isLoggedIn?: boolean;
 }
 
 export function Header({ isLoggedIn = false }: HeaderProps) {
+  const [mounted, setMounted] = useState(false);
   const savedJobsCount = useJobsStore((state) => state.jobs.length);
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
-    <header className="h-25 border-b-[5px] border-[#2175d9] bg-[#0f1941]">
-      <div className="mx-auto flex h-full max-w-432 items-center justify-between px-25">
+    <header className="h-16 sm:h-20 border-b-4 border-[#2175d9] bg-[#0f1941]">
+      <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <svg
-            width="95"
-            height="24"
-            viewBox="0 0 95 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <text
-              x="0"
-              y="18"
-              fill="white"
-              fontFamily="Inter"
-              fontSize="20"
-              fontWeight="700"
-            >
-              WAFFLE
-            </text>
-          </svg>
+          <span className="text-white text-xl sm:text-2xl font-bold">WAFFLE</span>
         </Link>
 
-        {/* Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        {/* Navigation - Desktop */}
+        <nav className="hidden md:flex items-center gap-6">
           <Link
             href="/offres"
             className="text-white text-base font-medium transition-colors hover:text-[#2175d9]"
@@ -50,18 +39,9 @@ export function Header({ isLoggedIn = false }: HeaderProps) {
             href="/pins"
             className="flex items-center gap-1.5 text-white transition-colors hover:text-[#2175d9]"
           >
-            <span className="text-base font-medium">{savedJobsCount}</span>
-            <BookmarkIcon sx={{ fontSize: 24 }} />
-          </Link>
-        </nav>
-
-        {/* Right side */}
-        <div className="flex items-center gap-4 md:hidden">
-          <Link
-            href="/pins"
-            className="flex items-center gap-1.5 text-white transition-colors hover:text-[#2175d9]"
-          >
-            <span className="text-base font-medium">{savedJobsCount}</span>
+            <span className="text-base font-medium">
+              {mounted ? savedJobsCount : 0}
+            </span>
             <BookmarkIcon sx={{ fontSize: 24 }} />
           </Link>
           {isLoggedIn ? (
@@ -73,10 +53,19 @@ export function Header({ isLoggedIn = false }: HeaderProps) {
               <LoginIcon sx={{ fontSize: 24 }} />
             </button>
           )}
-        </div>
+        </nav>
 
-        {/* Desktop Login */}
-        <div className="hidden md:flex items-center">
+        {/* Navigation - Mobile */}
+        <div className="flex items-center gap-4 md:hidden">
+          <Link
+            href="/pins"
+            className="flex items-center gap-1.5 text-white transition-colors hover:text-[#2175d9]"
+          >
+            <span className="text-base font-medium">
+              {mounted ? savedJobsCount : 0}
+            </span>
+            <BookmarkIcon sx={{ fontSize: 24 }} />
+          </Link>
           {isLoggedIn ? (
             <button className="text-white transition-colors hover:text-[#2175d9]">
               <LogoutIcon sx={{ fontSize: 24 }} />

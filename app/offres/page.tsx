@@ -13,7 +13,9 @@ export default async function JobsPage() {
   const client = createClient();
 
   try {
-    const jobs = await client.getAllByType("jobs");
+    const jobs = await client.getAllByType("jobs", {
+      orderings: [{ field: "my.jobs.published_date", direction: "desc" }],
+    });
 
     console.log(`Found ${jobs.length} jobs`);
     if (jobs.length > 0) {

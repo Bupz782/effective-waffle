@@ -6,5 +6,6 @@ export const components = {
   hero_section: dynamic(() => import("./HeroSection")),
   job_list: dynamic(() => import("./JobList")),
   job_slices: dynamic(() => import("./JobSlices")),
+  latest_jobs: dynamic(() => import("./LatestJobs")),
   text_section: dynamic(() => import("./TextSection")),
 };

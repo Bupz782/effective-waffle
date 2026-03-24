@@ -1,17 +1,12 @@
-import { FC } from "react";
-import { Content } from "@prismicio/client";
-import { SliceComponentProps, PrismicLink } from "@prismicio/react";
-import { isFilled } from "@prismicio/client";
+"use client";
 
-/**
- * Props for `JobList`.
- */
-export type JobListProps = SliceComponentProps<Content.JobListSlice>;
+import { PrismicLink } from "@prismicio/react";
+import { isFilled } from "@prismicio/client";
 
 /**
  * Component for "JobList" Slices.
  */
-const JobList: FC<JobListProps> = ({ slice }) => {
+export default function JobList({ slice }: { slice: any }) {
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -59,6 +54,4 @@ const JobList: FC<JobListProps> = ({ slice }) => {
       </div>
     </section>
   );
-};
-
-export default JobList;
+}

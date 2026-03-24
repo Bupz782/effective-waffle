@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { JobsDocument } from "@/prismicio-types";
+import { JobsDocument } from "@/types/prismic";
 import JobCard from "./JobCard";
 import { Button } from "@/components/ui/button";
 

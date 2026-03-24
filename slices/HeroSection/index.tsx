@@ -1,17 +1,12 @@
-import { Content, isFilled } from "@prismicio/client";
-import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
-import { SliceComponentProps } from "@prismicio/react";
-import { FC } from "react";
+"use client";
 
-/**
- * Props for `HeroSection`.
- */
-export type HeroSectionProps = SliceComponentProps<Content.HeroSectionSlice>;
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { isFilled } from "@prismicio/client";
 
 /**
  * Component for "HeroSection" Slices.
  */
-const HeroSection: FC<HeroSectionProps> = ({ slice }) => {
+export default function HeroSection({ slice }: { slice: any }) {
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -27,6 +22,7 @@ const HeroSection: FC<HeroSectionProps> = ({ slice }) => {
             imgixParams={{ q: 80 }}
             fill
             priority
+            fallbackAlt=""
           />
           <div className="absolute inset-0 bg-black/50" />
         </div>
@@ -46,18 +42,15 @@ const HeroSection: FC<HeroSectionProps> = ({ slice }) => {
           </p>
         )}
 
-        {isFilled.link(slice.primary.cta_link) &&
-          isFilled.keyText(slice.primary.cta_text) && (
-            <PrismicNextLink
-              field={slice.primary.cta_link}
-              className="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors"
-            >
-              {slice.primary.cta_text}
-            </PrismicNextLink>
-          )}
+        {isFilled.link(slice.primary.cta_link) && isFilled.keyText(slice.primary.cta_text) && (
+          <PrismicNextLink
+            field={slice.primary.cta_link}
+            className="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors"
+          >
+            {slice.primary.cta_text}
+          </PrismicNextLink>
+        )}
       </div>
     </section>
   );
-};
-
-export default HeroSection;
+}

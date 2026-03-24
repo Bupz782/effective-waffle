@@ -5,6 +5,7 @@ import {
 } from "@prismicio/client";
 import { enableAutoPreviews } from "@prismicio/next";
 import sm from "./slicemachine.config.json";
+import type { PrismicDocument } from "./types/prismic";
 
 /**
  * The project's Prismic repository name.
@@ -39,7 +40,7 @@ const routes: Route[] = [
 export const createClient = (config: ClientConfig = {}) => {
   console.log("=== CREATING PRISMIC CLIENT ===", repositoryName);
   
-  const client = baseCreateClient(repositoryName, {
+  const client = baseCreateClient<PrismicDocument>(repositoryName, {
     routes,
     fetchOptions:
       process.env.NODE_ENV === "production"
